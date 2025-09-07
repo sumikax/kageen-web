@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="scroll-restoration" content="manual" />
+
+  <!-- Page title -->
+  <title>𝗞𝗮𝗴𝗲𝗻𝗼𝘂 𝗙𝗮𝗺𝗶𝗹𝘆</title>
+
+  <!-- Favicon and app icon -->
+  <link rel="icon" href="./source/komunitas.jpg" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./source/komunitas.jpg" />
+  <link rel="shortcut icon" href="./source/komunitas.jpg" type="image/x-icon" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="𝗞𝗮𝗴𝗲𝗻𝗼𝘂 𝗙𝗮𝗺𝗶𝗹𝘆" />
+  <meta property="og:description" content="Sebuah marga para kreator Anime." />
+  <meta property="og:image" content="https://kagenoufamily.my.id/source/komunitas.jpg" />
+  <meta property="og:url" content="https://ajrahhh.my.id" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Manrope & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Additional fonts: Inter & Satoshi (Fontshare) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Swiper CSS (for carousels/sliders) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+<!-- Hero section with images, title, and action buttons -->
+<section class="hero">
+  <div class="hero-album">
+    <img src="source/gen_1.jpg" alt="Member 1" />
+    <img src="source/komunitas.jpg" alt="Member 2" />
+    <img src="source/gen_2.jpg" alt="Member 3" />
+  </div>
+
+  <div class="text-wrapper">
+    <h1>Kagenou Family</h1>
+    <p>Sebuah marga edit para kreator anime.</p>
+  </div>
+
+  <div class="hero-buttons">
+    <a href="#jelajah" class="hero-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 2L15 8l6 2-6 2-2 6-2-6-6-2 6-2 2-6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Jelajahi
+    </a>
+
+    <button id="btnPengumuman" class="hero-btn" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      Info
+    </button>
+  </div>
+</section>
+
+<!-- Announcement modal -->
+<div id="pengumumanModal" class="modal">
+  <div class="modal-content">
+    <h3>Pengumuman</h3>
+    <p>gada info, out aj</p>
+  </div>
+</div>
+
+<!-- Jelajahi section (sub-groups carousel) -->
+<section id="jelajah" class="jelajahi-section">
+  <div class="jelajah-wrapper">
+
+    <div class="jelajah-header">
+      <h2>Sub Grup Kagenou</h2>
+      <p>Kenali grup dibawah naungan Kagenou Family.</p>
+    </div>
+
+    <div class="carousel-scroll" onwheel="scrollHorizontally(event)">
+      
+      <div class="carousel-slide">
+        <img src="source/gen_1.jpg" alt="Grup 1" draggable="false" />
+        <h3>Kagenou Family</h3>
+        <p>Ini kageen gen 1 ygy</p>
+      </div>
+
+      <div class="carousel-slide" id="komunitas">
+        <img src="source/komunitas.jpg" alt="Grup 2" draggable="false" />
+        <h3>Komunitas KGN</h3>
+        <p>nah, ini komunitasnya</p>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="source/gen_2.jpg" alt="Grup 3" draggable="false" />
+        <h3>Kagenou Family II</h3>
+        <p>Ini kageen gen 2 ygy</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Sticky navigation bar -->
+<header id="stickyNavbar">
+  <img src="source/komunitas.jpg" alt="Logo KGN" class="navbar-logo" draggable="false" />
+  <nav class="nav-links">
+    <a href="#growthBars" class="nav-link">Member</a>
+    <span class="separator">|</span>
+    <a href="#topMem" class="nav-link">Top</a>
+    <span class="separator">|</span>
+    <a href="#tutorial" class="nav-link">Join</a>
+    <span class="separator">|</span>
+    <a href="#leaderSection" class="nav-link">Leader</a>
+  </nav>
+</header>
+
+<!-- Member growth section -->
+<section class="member-growth-section">
+  <h2 class="growth-title">Jumlah Member</h2>
+  <div id="growthBars" class="growth-bars"></div>
+</section>
+
+<!-- Button to open member registration popup -->
+<div class="hero-buttons">
+  <button class="hero-btn" id="btnDaftarMember" onclick="bukaPopup('popupMember')">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <circle cx="12" cy="8" r="4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    Daftar Member
+  </button>
+</div>
+
+<!-- Popup: Member registration -->
+<div id="popupMember" class="popup-member">
+  <div class="popup-content">
+    <h3>Daftar Member</h3>
+
+    <input
+      type="text"
+      id="searchMember"
+      placeholder="Cari nickname ..."
+      style="padding: 6px 10px; width: 90%; margin: 8px 0; border-radius: 8px; border: none; outline: none; background: rgba(255,255,255,0.1); color: white; font-size: 14px;"
+    />
+
+    <div class="member-list-scroll">
+      <ol id="listMember" style="padding-left: 20px;"></ol>
+    </div>
+
+    <p id="jumlahAnggota" style="margin-top: 20px; font-size: 14px; color: #ccc;">Menghitung member ...</p>
+  </div>
+</div>
+
+<!-- Popup: Member detail view -->
+<div id="popupDetail" class="popup-member">
+  <div class="popup-content">
+    <div id="detailContent"></div>
+  </div>
+</div>
+
+<!-- Top Member Section -->
+<section id="topMem" class="top-member-section">
+  <h2 class="top-title">Top Member Teratas</h2>
+  <div id="topPodium" class="top-podium"></div>
+</section>
+
+<h2 class="timeline-title">Top Rank Member</h2>
+<section id="top-users">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Member</th>
+          <th>Pesan</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody id="user-table"></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Tutorial / Seleksi section -->
+<h2 class="timeline-title">Seleksi Marga Kagenou Family</h2>
+<section id="tutorial" class="timeline-section animate-on-scroll">
+  <div class="timeline-container">
+
+    <div class="timeline-item left animate-step">
+      <div class="timeline-content">
+        <div class="icon-circle">1</div>
+        <div class="text">
+          Silahkan bergabung di Grup Seleksi Kagenou,
+          <a href="https://chat.whatsapp.com/FeNfStxIarXIBtDuTHTXW6?mode=ems_copy_c" target="_blank" style="color:#a64eff; font-weight:600;">klik di sini</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item right animate-step">
+      <div class="timeline-content">
+        <div class="text">
+          Setelah bergabung, klik tombol <b>Lanjutkan</b> dari bot Sumika untuk melanjutkan seleksi.
+        </div>
+        <div class="icon-circle">2</div>
+      </div>
+    </div>
+
+    <div class="timeline-item left animate-step">
+      <div class="timeline-content">
+        <div class="icon-circle">3</div>
+        <div class="text">
+          Lalu ikuti step atau langka dari Bot atau ketik <code>.seleksi</code> untuk memulai seleksi secara manual.
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item right animate-step">
+      <div class="timeline-content">
+        <div class="text">Jika step telah diikuti. Silahkan tunggu respon dari admin grup.</div>
+        <div class="icon-circle">4</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Admin / Leader section -->
+<h2 class="admin-title">Leader Family Kagenou</h2>
+<div class="admin-wrapper" id="leaderSection">
+  <div class="admin-list" onwheel="scrollHorizontally(event)">
+
+    <!-- Left spacer -->
+    <div class="admin-spacer"></div>
+
+    <div class="admin-card">
+      <img src="./source/admin/sidzz.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Sidzz</p>
+      <p class="admin-username">𝙎𝙞𝙙𝙯𝙯𝙆𝙖𝙜𝙚𝙣𝙤𝙪メ</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/vinz.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Vinz</p>
+      <p class="admin-username">—𝗩𝗶𝗻𝘇 𝙆𝙂𝙉 𝖋𝖙` 𝘾𝙉𝙇</p>
+      <p class="admin-role">Meme Editor</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/jeany.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Jeanyy</p>
+      <p class="admin-username">𝙅𝙪𝙣𝙯𝙮𝙤𝙧〆𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/vanzel.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Vanzell</p>
+      <p class="admin-username">—𝐕𝐚𝐧𝐳𝐞𝐥𝐥 𝖋𝖙 𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/belzy.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Beelzy</p>
+      <p class="admin-username">𝙈𝙤𝙧𝙞𝙘𝙞𝙬𝙖`ft 𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/fhi.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Fyuze Kaoru!</p>
+      <p class="admin-username">ー𝐅𝐲𝐮𝐳𝐞 || 𝐟𝐭`𝙆𝙂𝙉👑</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/han.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Si Hitam</p>
+      <p class="admin-username">—𝐑𝐞𝐢𝐧𝐚𝐚〆𝙆𝙂𝙉</p>
+      <p class="admin-role">Selection Officer</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/sora.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Jraa Senpai</p>
+      <p class="admin-username">𝙎𝙤𝙧𝙖𝙒𝙖𝙣𝙜𝙮𝙮 ft 𝗔𝗣</p>
+      <p class="admin-role">Bot & Security</p>
+    </div>
+
+    <div class="admin-card" id="ryy">
+      <img src="./source/admin/ryy.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Ryy Sensei</p>
+      <p class="admin-username">𝙍𝙮𝙮𝙆𝙖𝙜𝙚𝙣𝙤𝙪`𝐍𝐂𝐀</p>
+      <p class="admin-role">Owner & Founder</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/ranz.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Ranz Hengker</p>
+      <p class="admin-username">𝙍𝙖𝙣𝙯𝙆𝙖𝙜𝙚𝙣𝙤𝙪`𝐍𝐂𝐀</p>
+      <p class="admin-role">Bot Integrator</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/rey.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Rey Kakkoii</p>
+      <p class="admin-username">𝙉𝙪𝙜𝙧𝙚𝙮𝙮〆𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/faa.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Faexyy Imupp</p>
+      <p class="admin-username">𝙁𝙖𝙚𝙭𝙮𝙮 𝖋𝖙 𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/jyy.jpeg" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Jyy >•<</p>
+      <p class="admin-username">𝙅𝙮𝙮𝙆𝙖𝙜𝙚𝙣𝙤𝙪〆𝙒𝙊𝙁🕊️</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/stazz.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Stazz</p>
+      <p class="admin-username">𝘚𝘛𝘈𝘡𝘡 `𝙆𝙂𝙉〆𝑪𝑨𝑶༄</p>
+      <p class="admin-role">Selection Officer</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/miruki.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Miruki</p>
+      <p class="admin-username">—Myyrukiii`</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/ann.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Ann</p>
+      <p class="admin-username">—𝘼𝙣𝙣 𝐕𝐞𝐫𝐬𝐞࿔`𝙆𝙂𝙉`</p>
+      <p class="admin-role">Video Publisher</p>
+    </div>
+
+    <div class="admin-card">
+      <img src="./source/admin/raa.png" alt="Chibi" class="admin-avatar" />
+      <p class="admin-nickname">Raa</p>
+      <p class="admin-username">𝐑𝐚𝐚𝐕𝐞𝐫𝐬𝐞࿔𝖋𝖙 𝙆𝙂𝙉</p>
+      <p class="admin-role">Member Collab</p>
+    </div>
+
+    <!-- Right spacer -->
+    <div class="admin-spacer"></div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2025 <a href="https://www.tiktok.com/@sorawangyy" target="_blank">Sora</a> &amp; <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">KDev's</a>. Hak cipta dilindungi.</p>
+  <p>📱 Ikuti <a href="https://www.tiktok.com/@kagenouofficial" target="_blank">Kagenou Family</a> di TikTok</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
