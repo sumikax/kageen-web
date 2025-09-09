@@ -1,7 +1,7 @@
 [
   {
     "name": "Kagenou Family",
-    "member": 339
+    "member": 340
   },
   {
     "name": "Kagenou Family II",
@@ -9,15 +9,15 @@
   },
   {
     "name": "Kagenou Family III",
-    "member": 240
+    "member": 243
   },
   {
     "name": "KGN Bot Area",
-    "member": 194
+    "member": 193
   },
   {
     "name": "KGN MLBB Area",
-    "member": 185
+    "member": 184
   },
   {
     "name": "KGN FF Area",
@@ -25,6 +25,6 @@
   },
   {
     "name": "KGN Editor Area",
-    "member": 116
+    "member": 115
   }
 ]
